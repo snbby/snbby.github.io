@@ -1,18 +1,34 @@
 body {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
-  background: rgb(13, 17, 23);
-  text-align: center;
-  color: white;
+  /* background: rgb(12, 24, 44); */
+  /* text-align: center; */
+  /* color: white; */
+  margin-top: 32px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  max-width: 960px;        /* Maximum width */
+  margin: 0 auto;         /* Centers it horizontally */
+  padding: 0 16px;         /* Some breathing room on small screens */
 }
 
-.profile {
+/* :root {
+  --link-color: white;
+}
+
+a {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-color);
+}
+a:visited {
+  color: var(--link-color);
+} */
+
+.profileImage {
   width: 150px;
   height: 150px;
   border-radius: 50%;
