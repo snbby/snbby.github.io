@@ -12,6 +12,7 @@ import InstoriesLogo from '../images/instories_logo.jpeg'
 import PaltaLogo from '../images/palta_logo.jpeg'
 import LamodaLogo from '../images/lamoda_logo.jpeg'
 import YandexLogo from '../images/yandex_logo.jpeg'
+import { styled } from '@mui/material/styles';
 
 const steps = [
     {
@@ -67,7 +68,23 @@ const steps = [
     },
 ];
 
+function createStepIconComponent(imageSrc) {
+    return function CustomStepIcon(props) {
+        const { active, completed, icon } = props;
 
+
+        return (
+                <img
+                    src={imageSrc}
+                    style={{
+                        width: '50px', 
+                        borderRadius: '20%', 
+                        opacity: active ? 1 : 0.5
+                    }}
+                />
+        );
+    }
+}
 export default function ExperienceStepper() {
     const [activeStep, setActiveStep] = React.useState(0);
 
@@ -80,13 +97,13 @@ export default function ExperienceStepper() {
             <Stepper orientation="vertical" nonLinear activeStep={activeStep}>
                 {steps.map((step, index) => (
                     <Step key={step.company} expanded={activeStep === index}>
-                        <StepLabel onClick={() => handleStepClick(index)} sx={{ cursor: 'pointer', userSelect: 'none' }}>
+                        <StepLabel StepIconComponent={createStepIconComponent(step.logo)} onClick={() => handleStepClick(index)} sx={{ cursor: 'pointer', userSelect: 'none' }}>
                             <Box sx={{display: "flex", justifyContent: "space-between"}}>
                                 <Box sx={{display: "flex", gap: 2}}>
-                                    <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box>
+                                    {/* <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box> */}
                                     <Stack>
-                                        <Typography>{step.position}</Typography>
                                         <Typography><b>{step.company}</b></Typography>
+                                        <Typography>{step.position}</Typography>
                                     </Stack>
                                 </Box>
                                 <Typography>{step.dates.from} - {step.dates.to}</Typography>
