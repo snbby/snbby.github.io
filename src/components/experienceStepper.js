@@ -80,22 +80,24 @@ export default function ExperienceStepper() {
             <Stepper orientation="vertical" nonLinear activeStep={activeStep}>
                 {steps.map((step, index) => (
                     <Step key={step.company} expanded={activeStep === index}>
-                        <StepLabel
-                            onClick={() => handleStepClick(index)}
-                            sx={{ cursor: 'pointer', userSelect: 'none' }}
-                        >
+                        <StepLabel onClick={() => handleStepClick(index)} sx={{ cursor: 'pointer', userSelect: 'none' }}>
                             <Box sx={{display: "flex", justifyContent: "space-between"}}>
-                                <Typography>{step.position} at <b>{step.company}</b></Typography>
+                                <Box sx={{display: "flex", gap: 2}}>
+                                    <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box>
+                                    <Stack>
+                                        <Typography>{step.position}</Typography>
+                                        <Typography><b>{step.company}</b></Typography>
+                                    </Stack>
+                                </Box>
                                 <Typography>{step.dates.from} - {step.dates.to}</Typography>
                             </Box>
-                            
                             {/* {monthsBetween(step.dates.from, step.dates.to)} */}
                         </StepLabel>
                         {activeStep === index && (
                             <StepContent>
                                 <Box sx={{display: "flex", alignItems:'center', gap: 2}}>
-                                    <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box>
-                                        <Typography>{step.company_description} {step.position_description}</Typography>
+                                    {/* <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box> */}
+                                    <Typography>{step.company_description} {step.position_description}</Typography>
                                     
                                     <Stack
                                         spacing={1}
