@@ -37,7 +37,7 @@ function App() {
         <IconChips/>
         <Divider textAlign="center">Experience</Divider>
         <ExperienceStepper/>
-        <Divider textAlign="center">Tech</Divider>
+        <Divider textAlign="center">Preferred Tech</Divider>
         <TechChips/>
       </Stack>
     </ThemeProvider>

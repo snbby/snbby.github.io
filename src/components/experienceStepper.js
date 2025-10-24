@@ -101,25 +101,17 @@ export default function ExperienceStepper() {
                             <Box sx={{display: "flex", justifyContent: "space-between"}}>
                                 <Stack>
                                     <Typography><b>{step.company}</b></Typography>
-                                    <Typography>{step.position}</Typography>
+                                    <Typography variant='caption'>{step.position}</Typography>
                                 </Stack>
-                                <Typography>{step.dates.from} - {step.dates.to}</Typography>
+                                <Stack sx={{alignItems: "flex-end"}}>
+                                    <Typography>{step.dates.from} - {step.dates.to}</Typography>
+                                    <Typography variant='caption'>{step.type}</Typography>
+                                </Stack>
                             </Box>
                         </StepLabel>
                         {activeStep === index && (
                             <StepContent>
-                                <Box sx={{display: "flex", alignItems:'center', gap: 2}}>
-                                    {/* <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box> */}
-                                    <Typography>{step.company_description} {step.position_description}</Typography>
-                                    
-                                    <Stack
-                                        spacing={1}
-                                        sx={{ flex: "0 0 auto", alignItems: "flex-end" }}
-                                    >
-                                        <Typography variant="caption">{step.type}</Typography>
-                                    </Stack>
-                                 </Box>
-                                
+                                <Typography>{step.company_description} {step.position_description}</Typography>
                             </StepContent>
                         )}
                     </Step>
