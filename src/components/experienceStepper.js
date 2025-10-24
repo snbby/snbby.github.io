@@ -99,16 +99,12 @@ export default function ExperienceStepper() {
                     <Step key={step.company} expanded={activeStep === index}>
                         <StepLabel StepIconComponent={createStepIconComponent(step.logo)} onClick={() => handleStepClick(index)} sx={{ cursor: 'pointer', userSelect: 'none' }}>
                             <Box sx={{display: "flex", justifyContent: "space-between"}}>
-                                <Box sx={{display: "flex", gap: 2}}>
-                                    {/* <Box component='img' src={step.logo} sx={{width:50, height:50, borderRadius:'20%'}}></Box> */}
-                                    <Stack>
-                                        <Typography><b>{step.company}</b></Typography>
-                                        <Typography>{step.position}</Typography>
-                                    </Stack>
-                                </Box>
+                                <Stack>
+                                    <Typography><b>{step.company}</b></Typography>
+                                    <Typography>{step.position}</Typography>
+                                </Stack>
                                 <Typography>{step.dates.from} - {step.dates.to}</Typography>
                             </Box>
-                            {/* {monthsBetween(step.dates.from, step.dates.to)} */}
                         </StepLabel>
                         {activeStep === index && (
                             <StepContent>
