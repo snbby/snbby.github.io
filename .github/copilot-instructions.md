@@ -38,7 +38,7 @@ Integration points & external deps
 
 Common edits examples (copyable guidance)
 - Add a new contact chip: edit `src/components/ContactChips.jsx`, add another `<Chip icon={<SomeIcon/>} label="..." component="a" href="..." />` and keep `variant="outlined"` for consistency.
-- Add a new tech entry: in `src/components/TechChips.jsx` add an object to the `techStack` array — for example: `name: 'NewTech', color: '3776AB' (hex without #), icon: SiNew`. Import `SiNew` from `react-icons/si`.
+- Add a new tech entry: in `src/components/TechChips.jsx` add an object to the `techStack` array — for example: `name: 'NewTech', color: '3776AB' (hex without # ), icon: SiNew`. Import `SiNew` from `react-icons/si`.
 
 Edge cases & gotchas
 - Images live under `src/images/` and are imported directly (e.g., `import pandaImg from '../images/panda.jpg'`) — keep paths relative to the importing file.

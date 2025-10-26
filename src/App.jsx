@@ -11,6 +11,20 @@ import TechChips from './components/TechChips';
 
 
 const darkTheme = createTheme({
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#fff', // white links
+          textDecorationColor: '#fff',
+        },
+      },
+      defaultProps: {
+        target: '_blank', // open in new tab by default
+        rel: 'noopener noreferrer', // security best practice
+      },
+    }
+  },
   typography: {
     h4: {fontFamily: 'Cambria, serif'},
     h5: {fontFamily: 'Cambria, serif'},
