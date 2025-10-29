@@ -8,6 +8,7 @@ import Header from './components/Header';
 import IconChips from './components/ContactChips';
 import ExperienceStepper from './components/ExperienceStepper';
 import TechChips from './components/TechChips';
+import ExperienceTimeline from './components/ExperienceTimeline';
 
 
 const darkTheme = createTheme({
@@ -50,7 +51,8 @@ function App() {
         <Header/>
         <IconChips/>
         <Divider textAlign="center">Experience</Divider>
-        <ExperienceStepper/>
+        {/* <ExperienceStepper/> */}
+        <ExperienceTimeline/>
         <Divider textAlign="center">Preferred Tech</Divider>
         <TechChips/>
       </Stack>

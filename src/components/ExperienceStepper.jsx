@@ -8,13 +8,13 @@ import StepContent from '@mui/material/StepContent';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
-import CloudLinuxLogo from '../images/cloudlinux_logo.jpeg'
-import InstoriesLogo from '../images/instories_logo.jpeg'
-import PaltaLogo from '../images/palta_logo.jpeg'
-import LamodaLogo from '../images/lamoda_logo.jpeg'
-import YandexLogo from '../images/yandex_logo.jpeg'
+import CloudLinuxLogo from '../images/cloudlinux_logo.jpeg';
+import InstoriesLogo from '../images/instories_logo.jpeg';
+import PaltaLogo from '../images/palta_logo.jpeg';
+import LamodaLogo from '../images/lamoda_logo.jpeg';
+import YandexLogo from '../images/yandex_logo.jpeg';
 
-const steps = [
+export const experienceSteps = [
     {
         company: 'CloudLinux',
         company_linkedin_link: 'https://www.linkedin.com/company/cloudlinux/',
@@ -101,7 +101,7 @@ export default function ExperienceStepper() {
     return (
         <Box >
             <Stepper orientation="vertical" nonLinear activeStep={activeStep}>
-                {steps.map((step, index) => (
+                {experienceSteps.map((step, index) => (
                     <Step key={step.company} expanded={activeStep === index}>
                         <StepLabel StepIconComponent={createStepIconComponent(step.logo)} onClick={() => handleStepClick(index)} sx={{ cursor: 'pointer', userSelect: 'none' }}>
                             <Box sx={{display: "flex", justifyContent: "space-between"}}>
