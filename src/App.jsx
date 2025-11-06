@@ -1,14 +1,10 @@
 import './App.css';
-import Stack from '@mui/material/Stack';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Divider from '@mui/material/Divider';
+import { Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import IconChips from './components/ContactChips';
-import ExperienceStepper from './components/ExperienceStepper';
-import TechChips from './components/TechChips';
-import ExperienceTimeline from './components/ExperienceTimeline';
+import Blog from './pages/Blog';
+import Home from './pages/Home';
 
 
 const darkTheme = createTheme({
@@ -35,27 +31,14 @@ const darkTheme = createTheme({
   },
 });
 
-
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-        <Stack
-          direction="column"
-          spacing={3}
-          sx={{
-            maxWidth: '960px',
-            margin: '0 auto'
-          }}
-        >
-        <Header/>
-        <IconChips/>
-        <Divider textAlign="center">Experience</Divider>
-        {/* <ExperienceStepper/> */}
-        <ExperienceTimeline/>
-        <Divider textAlign="center">Preferred Tech</Divider>
-        <TechChips/>
-      </Stack>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
     </ThemeProvider>
   );
 }
