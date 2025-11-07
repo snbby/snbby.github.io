@@ -138,29 +138,32 @@ export default function ExperienceTimeline() {
                             />
                         )}
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: 1.25, px: 2 }}>
+                    <TimelineContent sx={{ py: 0, px: 2 }}>
                         <Stack spacing={0.5}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-                                <Typography variant='h6'>
-                                    <Link href={step.company_linkedin_link}>
-                                        {step.company}
-                                    </Link>
+                            <Stack>
+                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+                                    <Typography variant='h6'>
+                                        <Link href={step.company_linkedin_link}>
+                                            {step.company}
+                                        </Link>
+                                    </Typography>
+                                    <IconButton
+                                        size="small"
+                                        onClick={() => handleToggle(index)}
+                                        aria-label={`Toggle details for ${step.company}`}
+                                        aria-expanded={isExpanded}
+                                        sx={{ color: 'inherit', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s ease' }}
+                                    >
+                                        <ExpandMoreIcon fontSize="inherit" />
+                                    </IconButton>
+                                </Box>
+                                <Typography variant='subtitle2' color='text.secondary'>
+                                    {step.position}
                                 </Typography>
-                                <IconButton
-                                    size="small"
-                                    onClick={() => handleToggle(index)}
-                                    aria-label={`Toggle details for ${step.company}`}
-                                    aria-expanded={isExpanded}
-                                    sx={{ color: 'inherit', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s ease' }}
-                                >
-                                    <ExpandMoreIcon fontSize="inherit" />
-                                </IconButton>
-                            </Box>
-                            <Typography variant='subtitle2' color='text.secondary'>
-                                {step.position}
-                            </Typography>
+                            </Stack>
+
                             <Collapse in={isExpanded} timeout='auto' unmountOnExit>
-                                <Typography variant='body2' sx={{ mt: 1 }}>
+                                <Typography variant='body2' sx={{ mt: 1, mb: 1}}>
                                     {step.company_description} {step.position_description}
                                 </Typography>
                             </Collapse>
