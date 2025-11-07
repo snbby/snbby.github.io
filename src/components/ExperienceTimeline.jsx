@@ -10,6 +10,9 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import IconButton from '@mui/material/IconButton';
+import Collapse from '@mui/material/Collapse';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import CloudLinuxLogo from '../images/cloudlinux_logo.jpeg';
 import InstoriesLogo from '../images/instories_logo.jpeg';
@@ -79,9 +82,17 @@ export const experienceSteps = [
 ];
 
 export default function ExperienceTimeline() {
+    const [expandedIndex, setExpandedIndex] = React.useState(null);
+
+    const handleToggle = (index) => {
+        setExpandedIndex((prev) => (prev === index ? null : index));
+    };
+
     return (
         <Timeline position="right">
-            {experienceSteps.map((step, index) => (
+            {experienceSteps.map((step, index) => {
+                const isExpanded = expandedIndex === index;
+                return (
                 <TimelineItem key={step.company}>
                     <TimelineOppositeContent
                         sx={{
@@ -91,7 +102,7 @@ export default function ExperienceTimeline() {
                             px: { xs: 1, sm: 2 },
                         }}
                     >
-                        <Typography variant="body2">
+                        <Typography variant='body2'>
                             {step.dates.from}
                         </Typography>
                         <Typography variant="caption" color="text.secondary">
@@ -129,21 +140,35 @@ export default function ExperienceTimeline() {
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: 1.25, px: 2 }}>
                         <Stack spacing={0.5}>
-                            <Typography variant="h6">
-                                <Link href={step.company_linkedin_link}>
-                                    {step.company}
-                                </Link>
-                            </Typography>
-                            <Typography variant="subtitle2" color="text.secondary">
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+                                <Typography variant='h6'>
+                                    <Link href={step.company_linkedin_link}>
+                                        {step.company}
+                                    </Link>
+                                </Typography>
+                                <IconButton
+                                    size="small"
+                                    onClick={() => handleToggle(index)}
+                                    aria-label={`Toggle details for ${step.company}`}
+                                    aria-expanded={isExpanded}
+                                    sx={{ color: 'inherit', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s ease' }}
+                                >
+                                    <ExpandMoreIcon fontSize="inherit" />
+                                </IconButton>
+                            </Box>
+                            <Typography variant='subtitle2' color='text.secondary'>
                                 {step.position}
                             </Typography>
-                            <Typography variant="body2">
-                                {step.company_description} {step.position_description}
-                            </Typography>
+                            <Collapse in={isExpanded} timeout='auto' unmountOnExit>
+                                <Typography variant='body2' sx={{ mt: 1 }}>
+                                    {step.company_description} {step.position_description}
+                                </Typography>
+                            </Collapse>
                         </Stack>
                     </TimelineContent>
                 </TimelineItem>
-            ))}
+                );
+            })}
         </Timeline>
     );
 }
