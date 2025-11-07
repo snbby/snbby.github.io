@@ -12,9 +12,9 @@ export default function ContactChips() {
     <Stack direction="row" spacing={1} sx={{justifyContent: "center"}}>
       <Chip icon={<GitHubIcon />} label="@snbby" component="a" href="https://github.com/snbby" variant="outlined" clickable/>
       <Chip icon={<LinkedInIcon />} label="in/malyshev-max" component="a" href="https://www.linkedin.com/in/malyshev-max/" variant="outlined" clickable/>
-      <Chip icon={<ArticleIcon />} label="Visit Blog" component={RouterLink} to="/blog" variant="outlined" clickable/>
       <Chip icon={<LocationPinIcon />} label="Barcelona, Spain" variant="outlined" />
       <Chip icon={<EmailIcon />} label="max909907@gmail.com" variant="outlined" />
+      <Chip icon={<ArticleIcon />} label="Blog" component={RouterLink} to="/blog" variant="outlined" clickable/>
     </Stack>
   );
 }
