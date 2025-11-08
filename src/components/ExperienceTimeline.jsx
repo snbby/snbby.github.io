@@ -13,6 +13,8 @@ import Link from '@mui/material/Link';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 import CloudLinuxLogo from '../images/cloudlinux_logo.jpeg';
 import InstoriesLogo from '../images/instories_logo.jpeg';
@@ -82,6 +84,8 @@ export const experienceSteps = [
 
 export default function ExperienceTimeline() {
     const [expandedIndex, setExpandedIndex] = React.useState(null);
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     const handleToggle = (index) => {
         setExpandedIndex((prev) => (prev === index ? null : index));
@@ -95,46 +99,34 @@ export default function ExperienceTimeline() {
                 <TimelineItem key={step.company}>
                     <TimelineOppositeContent
                         sx={{
-                            // m: 'auto 1',
                             textAlign: 'right',
                             flex: { xs: 5, sm: 0.25 },
                             px: { xs: 1, sm: 2 },
+                            display: { xs: 'none', sm: 'block' },
                         }}
                     >
-                        <Typography variant='body2'>
-                            {step.dates.from}
-                        </Typography>
-                        <Typography variant="caption" color="text.secondary">
-                            {step.type}
-                        </Typography>
+                        <Stack>
+                            <Typography variant='body2' component="span" >
+                                {step.dates.from}
+                            </Typography>
+                            <Typography component="span" variant="caption" color="text.secondary" >
+                                {step.type}
+                            </Typography>
+                        </Stack>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineDot
-                            sx={{
-                                m: 0,
-                                p: 0,
-                                backgroundColor: 'transparent',
-                                boxShadow: 'none',
-                            }}
+                            sx={{m: 0, p: 0, backgroundColor: 'transparent', boxShadow: 'none'}}
                         >
                             <Box
                                 component="img"
                                 src={step.logo}
                                 alt={`${step.company} logo`}
-                                sx={{
-                                    width: 50,
-                                    height: 50,
-                                    borderRadius: '20%',
-                                    opacity: 0.9,
-                                }}
+                                sx={{width: 50, height: 50, borderRadius: '20%', opacity: 0.9}}
                             />
                         </TimelineDot>
                         {index < experienceSteps.length - 1 && (
-                            <TimelineConnector
-                                sx={{
-                                    bgcolor: 'divider',
-                                }}
-                            />
+                            <TimelineConnector sx={{bgcolor: 'divider'}}/>
                         )}
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: 0, px: 2 }}>
@@ -142,9 +134,7 @@ export default function ExperienceTimeline() {
                             <Stack>
                                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
                                     <Typography variant='h6'>
-                                        <Link href={step.company_linkedin_link}>
-                                            {step.company}
-                                        </Link>
+                                        <Link href={step.company_linkedin_link}> {step.company}</Link>
                                     </Typography>
                                     <IconButton
                                         size="small"
