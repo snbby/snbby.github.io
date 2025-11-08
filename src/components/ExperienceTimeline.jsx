@@ -29,10 +29,9 @@ export const experienceSteps = [
         dates: { 'from': '2025-10'},
         logo: CloudLinuxLogo,
         type: 'Remote. Full-time',
-        company_description: `Cloudlinux is the only commercially supported operating system (OS) optimized 
-        for hosting service providers who manage a significant level of shared hosting accounts and 
-        for datacenters who sell servers to enterprise and SMB customers.`,
-        position_description: ``,
+        company_description: `CloudLinux develops software that makes Linux servers more secure, stable, and efficient. 
+        The company also created and supports AlmaLinux, a free open-source operating system trusted by businesses worldwide as a stable alternative to CentOS and RHEL.`,
+        position_description: `I joined the internal team to support patch release cycle`,
     },
     {
         company: 'Instories',

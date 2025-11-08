@@ -31,13 +31,10 @@ export default function TechChips() {
     <Stack
       direction="row"
       spacing={1}
-      sx={{ justifyContent: "center"}}
+      sx={{ justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', rowGap: 1 }}
     >
       {techStack.map(({ name, color, icon: Icon }) => (
-        <RoundedIconChip
-          icon={<Icon size={18} color={color} />}
-          label={name}
-        />
+        <RoundedIconChip key={name} icon={<Icon size={18} color={color} />} label={name} />
       ))}
     </Stack>
   );

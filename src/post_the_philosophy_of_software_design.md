@@ -1,6 +1,5 @@
-## Review on the book "The philosophy of software design"
-*Written by John Ousterhout*
-
+## Review on the book "A philosophy of software design"
+![Book cover](/books/a-philosophy-of-software-design.webp)
 **The main idea of the book is complexity**
 
 The author outlines 3 main causes of the complexity:
