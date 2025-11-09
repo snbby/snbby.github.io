@@ -100,8 +100,9 @@ export default function ExperienceTimeline() {
                     <TimelineOppositeContent
                         sx={{
                             textAlign: 'right',
-                            flex: { xs: 5, sm: 0.25 },
-                            px: { xs: 1, sm: 2 },
+                            flex: { xs: 0, sm: 0.25 },
+                            mx: 0,
+                            pl: 0,
                             display: { xs: 'none', sm: 'block' },
                         }}
                     >
