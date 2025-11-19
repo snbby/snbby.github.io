@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { Link as RouterLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
-import blogPostUrl from '../post_the_philosophy_of_software_design.md';
+import blogPostUrl from '../files/post_the_philosophy_of_software_design.md';
 import PageLayout from '../components/PageLayout';
 
 import './Blog.css';
