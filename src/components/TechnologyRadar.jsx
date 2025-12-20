@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import { ResponsiveRadar } from '@nivo/radar';
 
 // Two measures per tech: Experience (proficiency/time in use) and Curiosity (desire to explore).
