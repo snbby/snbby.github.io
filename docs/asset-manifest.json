@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.fa84a648.css",
-    "main.js": "/static/js/main.9d8475f0.js",
+    "main.js": "/static/js/main.a7c99ad6.js",
     "static/media/Max.jpg": "/static/media/Max.5e6ccba170cbf34baee9.jpg",
     "index.html": "/index.html",
     "static/media/about.md": "/static/media/about.9ad3849ba9c341395780.md",
     "static/media/post_the_philosophy_of_software_design.md": "/static/media/post_the_philosophy_of_software_design.20c7783ad0c0017b7af0.md",
     "main.fa84a648.css.map": "/static/css/main.fa84a648.css.map",
-    "main.9d8475f0.js.map": "/static/js/main.9d8475f0.js.map"
+    "main.a7c99ad6.js.map": "/static/js/main.a7c99ad6.js.map"
   },
   "entrypoints": [
     "static/css/main.fa84a648.css",
-    "static/js/main.9d8475f0.js"
+    "static/js/main.a7c99ad6.js"
   ]
 }

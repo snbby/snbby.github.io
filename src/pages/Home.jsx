@@ -3,9 +3,9 @@ import Divider from '@mui/material/Divider';
 import Header from '../components/Header';
 import IconChips from '../components/ContactChips';
 import ExperienceTimeline from '../components/ExperienceTimeline';
-import TechChips from '../components/TechChips';
 import PageLayout from '../components/PageLayout';
 import AboutSection from '../components/AboutSection';
+import TechnologyRadar from '../components/TechnologyRadar';
 
 const Home = () => {
   return (
@@ -16,8 +16,8 @@ const Home = () => {
       <AboutSection />
       <Divider textAlign="center">Experience</Divider>
       <ExperienceTimeline />
-      <Divider textAlign="center">Preferred Tech</Divider>
-      <TechChips />
+      <Divider textAlign="center">Technology radar</Divider>
+      <TechnologyRadar />
     </PageLayout>
   );
 };
